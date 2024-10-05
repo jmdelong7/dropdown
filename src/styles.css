@@ -72,26 +72,30 @@ svg {
 
 /* New styles */
 :root {
-  --clr-hover: rgb(157, 136, 136);
-  --clr-background: rgb(238, 237, 237);
+  --clr-hover: rgb(194, 195, 196);
+  --clr-background: rgb(221, 221, 221);
+  --box-shadow-black: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #dropdown-container {
-  border: 1px solid red;
   margin: auto;
   text-align: center;
-  background-color: var(--clr-background);
+  position: relative;
 }
 
 #dropdown-button-container {
-  border: 1px solid blue;
+  display: inline-block;
 }
 
 #dropdown-button {
-  border: 1px solid black;
-  background-color: transparent;
+  background-color: var(--clr-background);
   padding: 0.5rem;
   cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 8px;
+  margin: 10px;
+  border: none;
+  box-shadow: var(--box-shadow-black);
 }
 
 #dropdown-button:hover {
@@ -99,15 +103,20 @@ svg {
 }
 
 #dropdown-menu-container {
-  border: 1px solid green;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 #dropdown-menu {
   display: inline-block;
+  box-shadow: var(--box-shadow-black);
+  border-radius: 8px;
+  background-color: var(--clr-background);
+  overflow: hidden;
 }
 
 .dropdown-item {
-  border: 1px solid black;
   display: flex;
 }
 
@@ -115,7 +124,12 @@ svg {
   text-decoration: none;
   color: black;
   width: 100%;
-  padding: 0.5rem;
+  padding: 5px 15px;
+  border-bottom: 1px solid var(--clr-hover);
+}
+
+.dropdown-item:last-child > .item-link{
+  border-bottom: none;
 }
 
 .item-link:hover {
@@ -123,5 +137,7 @@ svg {
 }
 
 .visible {
-	display: none;
+  display: none;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
 }
