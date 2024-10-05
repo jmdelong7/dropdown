@@ -1,21 +1,9 @@
-function toggleClass(el, name) {
-  if (el.classList.contains(name)) {
-    el.classList.remove(name)
-  } else {
-    el.classList.add(name)
-  }
-}
+import dropdownListener from './dropdown';
+import './styles.css';
 
-function getDropDown(id) {
-  const menu = document.getElementById(id)
-  if (menu.classList.contains('visible')) {
-  }
-}
-
-function toggleMenu(items) {
-
-}
-
-function dropdown(button, items) {
-  
-}
+(function main() {
+  const btn = document.getElementById('dropdown-button');
+  const menu = document.getElementById('dropdown-menu-container');
+  const className = 'visible';
+  dropdownListener(btn, menu, className);
+}());

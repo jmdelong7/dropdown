@@ -1,21 +1,29 @@
 {
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base"],
   "env": {
     "browser": true,
     "node": true,
     "es2021": true
   },
   "rules": {
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": true,
-      "optionalDependencies": false,
-      "peerDependencies": false,
-      "includeTypes": true
-    }]
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false,
+        "includeTypes": true
+      }
+    ]
   },
   "overrides": [
     {
-      "files": ["webpack.*.js", "webpack.*.mjs", "*.config.js", "*.config.mjs"],
+      "files": [
+        "webpack.*.js",
+        "webpack.*.mjs",
+        "*.config.js",
+        "*.config.mjs"
+      ],
       "rules": {
         "import/no-extraneous-dependencies": "off"
       }
